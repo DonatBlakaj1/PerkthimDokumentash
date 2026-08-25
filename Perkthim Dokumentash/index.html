@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="sq" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Përkthime  | Përkthime të Certifikuara Online nga 35 €</title>
+    <meta name="description" content="Porositni përkthime të certifikuara online: nga 35 € për faqe, dorëzim i shpejtë në 48 orë. Mbështetje për Gjermanisht, Anglisht, Italisht, Frëngjisht, Shqip dhe gjuhë të tjera nga përkthyes të betuar.">
+    
+    <!-- Link to Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            DEFAULT: '#1c1917', /* Stone 900 */
+                            hover: '#0c0a09', /* Stone 950 */
+                            light: '#fbfbfa', /* Warm Alabaster */
+                        },
+                        secondary: {
+                            DEFAULT: '#f5f5f4', /* Stone 100 */
+                            dark: '#e7e5e4', /* Stone 200 */
+                        },
+                        accent: {
+                            DEFAULT: '#b45309', /* Amber 700 / Antique Gold */
+                            hover: '#92400e', /* Amber 800 */
+                            gold50: '#fdfbeb', /* Amber 50 */
+                            gold100: '#fef3c7', /* Amber 100 */
+                            yellow: '#f59e0b', /* Amber 500 */
+                        },
+                        stoneText: '#44403c', /* Stone 700 */
+                        stoneLight: '#78716c', /* Stone 500 */
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Lora', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#fbfbfa] font-sans text-stoneText antialiased selection:bg-accent selection:text-white">
+
+    <!-- 1. Left Sidebar Navigation (Desktop only: sticky w-72 h-screen) -->
+    <aside class="hidden lg:flex flex-col justify-between fixed top-0 left-0 w-72 h-screen bg-[#fbfbfa] border-r border-stone-200/80 p-8 z-40">
+        <div class="space-y-10">
+            <!-- Sidebar Logo Branding -->
+            <a href="#" class="flex items-center gap-2.5 group">
+                <div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center text-white shadow-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                    </svg>
+                </div>
+                <span class="text-lg font-serif-brand font-bold tracking-tight text-primary">
+                    Përkthime<span class="text-accent">Expert</span>
+                </span>
+            </a>
+
+            <!-- Vertical Menu Links -->
+            <nav class="flex flex-col gap-2.5 text-xs font-bold uppercase tracking-wider text-stoneLight">
+                <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg bg-stone-100 text-primary transition-all">
+                    <span>Ballina</span>
+                </a>
+                <a href="#dokumentet" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-stone-50 hover:text-primary transition-all">
+                    <span>Shërbimet & Çmimet</span>
+                </a>
+                <a href="#si-funksionon" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-stone-50 hover:text-primary transition-all">
+                    <span>Si Funksionon</span>
+                </a>
+                <a href="#gjuhet" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-stone-50 hover:text-primary transition-all">
+                    <span>Gjuhët</span>
+                </a>
+                <a href="#faq" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-stone-50 hover:text-primary transition-all">
+                    <span>FAQ</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Sidebar Contact Info Card at bottom -->
+        <div class="bg-stone-100/60 p-4 rounded-xl border border-stone-200/50 space-y-3">
+            <div class="text-[10px] font-bold text-stoneLight uppercase tracking-wider">Na kontaktoni</div>
+            <a href="tel:+355691234567" class="text-xs font-bold text-primary hover:text-accent block transition-colors">+355 (0) 69 123 4567</a>
+            <div class="text-[10px] text-stoneLight font-medium">info@perkthime-expert.al</div>
+        </div>
+    </aside>
+
+    <!-- Mobile Top Navigation Header Bar -->
+    <header class="lg:hidden sticky top-0 z-50 bg-white border-b border-stone-200/80 shadow-xs backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <span class="text-base font-serif-brand font-bold tracking-tight text-primary">
+                        Përkthime<span class="text-accent">Expert</span>
+                    </span>
+                </a>
+
+                <!-- Mobile Trigger -->
+                <button id="mobile-menu-btn" type="button" class="text-primary hover:text-accent focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-3 shadow-inner">
+            <a href="#" class="block text-sm font-bold text-primary py-2 hover:bg-slate-50 px-3 rounded-lg">Ballina</a>
+            <a href="#dokumentet" class="block text-sm font-bold text-primary py-2 hover:bg-slate-50 px-3 rounded-lg">Shërbimet & Çmimet</a>
+            <a href="#si-funksionon" class="block text-sm font-bold text-primary py-2 hover:bg-slate-50 px-3 rounded-lg">Si Funksionon</a>
+            <a href="#gjuhet" class="block text-sm font-bold text-primary py-2 hover:bg-slate-50 px-3 rounded-lg">Gjuhët</a>
+            <a href="#faq" class="block text-sm font-bold text-primary py-2 hover:bg-slate-50 px-3 rounded-lg">FAQ</a>
+            <div class="pt-4 border-t border-stone-100 flex flex-col gap-2.5 px-3">
+                <a href="tel:+355691234567" class="text-xs font-bold text-primary flex items-center gap-2">
+                    +355 (0) 69 123 4567
+                </a>
+                <a href="#formular" class="bg-primary hover:bg-primary-hover text-white text-center py-3 rounded-lg text-xs font-bold uppercase tracking-wider">
+                    Merr një Ofertë
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. Scrollable Right Main Content Panel wrapper -->
+    <main class="ml-0 lg:ml-72 min-h-screen bg-white transition-all">
+
+        <!-- Top Portal Header row (Desktop only: shows status tags & quick contact CTA) -->
+        <div class="hidden lg:flex items-center justify-between border-b border-stone-100 px-10 py-6 bg-[#fbfbfa]">
+            <div>
+                <h1 class="text-sm font-serif-brand font-bold text-primary italic">Portal i Certifikuar i Përkthimeve Zyrtare</h1>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-1.5 bg-[#fef3c7] text-[#b45309] text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border border-amber-200">
+                    <span>★ ISO 17100</span>
+                </div>
+                <div class="text-xs font-medium text-stoneLight">Dërgesat fizike brenda Shqipërisë falas</div>
+                <a href="#formular" class="bg-primary hover:bg-primary-hover text-white px-5 py-2.5 rounded-lg text-[10px] font-bold tracking-widest uppercase transition-all shadow-xs">
+                    Ofertë e shpejtë
+                </a>
+            </div>
+        </div>
+
+        <!-- 3. Hero Section (Warm Editorial Layout: serif headers on warm cream and gold styled form) -->
+        <section class="py-16 px-6 lg:px-12 bg-[#fcfbfa] border-b border-stone-100 relative">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Column Text -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 bg-accent/10 border border-accent/10 px-3.5 py-1.5 rounded-full text-xs font-semibold text-accent tracking-wide">
+                            Përkthime me vlerë ligjore akademike & zyrtare
+                        </div>
+                        
+                        <h2 class="text-4xl sm:text-5xl font-serif-brand font-medium tracking-tight text-primary leading-tight">
+                            Përkthyes për të gjitha <span class="italic text-accent">dokumentet tuaja.</span>
+                        </h2>
+                        
+                        <p class="text-sm sm:text-base text-stoneText font-light leading-relaxed max-w-xl">
+                            Partneri juaj i besuar për përkthime zyrtare akademike dhe ligjore. Dorëzim digjital brenda 48 orëve me pranim të garantuar ligjërisht nga institucionet shtetërore, zyrat e gjendjes civile dhe universitetet.
+                        </p>
+
+                        <!-- Checklist Badge List -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent">✓</div>
+                                <span class="text-xs font-bold text-stoneText">Pranim i Garantuar 100%</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent">✓</div>
+                                <span class="text-xs font-bold text-stoneText">Përkthyes të Betuar Zyrtarë</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent">✓</div>
+                                <span class="text-xs font-bold text-stoneText">Format digjital PDF & me Postë</span>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-5 h-5 rounded-full bg-accent/10 flex items-center justify-center text-accent">✓</div>
+                                <span class="text-xs font-bold text-stoneText">Certifikim i Cilësisë ISO 17100</span>
+                            </div>
+                        </div>
+
+                        <!-- Buttons block -->
+                        <div class="flex flex-wrap items-center gap-4 pt-4">
+                            <a href="#formular" class="bg-primary hover:bg-primary-hover text-white px-7 py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all shadow-xs">
+                                Llogarit Çmimin
+                            </a>
+                            <a href="#dokumentet" class="border border-stone-200 hover:bg-stone-50 text-primary px-7 py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all">
+                                Shiko Katalogun
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column Quote Form -->
+                    <div id="formular" class="lg:col-span-5 bg-white border border-stone-200/80 p-6 sm:p-8 rounded-xl shadow-xs">
+                        <h3 class="text-sm font-bold text-primary mb-5 uppercase tracking-wider text-center">Formulari i Llogaritjes</h3>
+                        
+                        <form class="space-y-4" action="#" method="POST" onsubmit="event.preventDefault();">
+                            <!-- From Language -->
+                            <div>
+                                <label for="from-lang" class="block text-[10px] font-bold text-stoneLight uppercase tracking-widest mb-1">Nga Gjuha</label>
+                                <select id="from-lang" class="w-full bg-[#fbfbfa] border border-stone-200 rounded-lg py-2.5 px-3 text-xs focus:outline-none focus:border-accent font-medium">
+                                    <option value="de">Gjermanisht (Deutsch)</option>
+                                    <option value="en">Anglisht (English)</option>
+                                    <option value="sq">Shqip</option>
+                                    <option value="it">Italisht (Italiano)</option>
+                                    <option value="fr">Frëngjisht (Français)</option>
+                                </select>
+                            </div>
+
+                            <!-- To Language -->
+                            <div>
+                                <label for="to-lang" class="block text-[10px] font-bold text-stoneLight uppercase tracking-widest mb-1">Në Gjuhën</label>
+                                <select id="to-lang" class="w-full bg-[#fbfbfa] border border-stone-200 rounded-lg py-2.5 px-3 text-xs focus:outline-none focus:border-accent font-medium">
+                                    <option value="sq">Shqip</option>
+                                    <option value="de">Gjermanisht (Deutsch)</option>
+                                    <option value="en">Anglisht (English)</option>
+                                    <option value="it">Italisht (Italiano)</option>
+                                    <option value="fr">Frëngjisht (Français)</option>
+                                </select>
+                            </div>
+
+                            <!-- Document Type -->
+                            <div>
+                                <label for="doc-type" class="block text-[10px] font-bold text-stoneLight uppercase tracking-widest mb-1">Lloji i Dokumentit</label>
+                                <select id="doc-type" class="w-full bg-[#fbfbfa] border border-stone-200 rounded-lg py-2.5 px-3 text-xs focus:outline-none focus:border-accent font-medium">
+                                    <option value="birth">Certifikatë Lindjeje / Martese</option>
+                                    <option value="diploma">Diplomë Shkollore / Certifikatë Studimi</option>
+                                    <option value="contract">Kontratë Pune / Biznesi</option>
+                                    <option value="court">Vendim Gjykate / Ligjor</option>
+                                    <option value="id">Pasaportë / Kartë Identiteti</option>
+                                    <option value="other">Tjetër Dokument</option>
+                                </select>
+                            </div>
+
+                            <!-- Upload Zone -->
+                            <div>
+                                <label class="block text-[10px] font-bold text-stoneLight uppercase tracking-widest mb-1">Ngarkoni skedarin tuaj</label>
+                                <div class="dashed-border py-6 px-4 text-center cursor-pointer hover:bg-slate-50 transition-all relative">
+                                    <input type="file" id="file-uploader" class="absolute inset-0 opacity-0 cursor-pointer" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                                    <div class="space-y-1.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                        </svg>
+                                        <p class="text-xs font-bold text-primary" id="upload-status-title">Klikoni këtu për të ngarkuar skedarin</p>
+                                        <p class="text-[10px] text-stoneLight">PDF, JPG, PNG ose DOC (Maks. 15MB)</p>
+                                    </div>
+                                </div>
+                                <!-- Preview badge -->
+                                <div id="file-name-badge" class="hidden mt-2.5 p-2.5 bg-stone-50 border border-stone-200 text-accent text-xs font-bold rounded-lg flex items-center justify-between">
+                                    <span id="file-name-text" class="truncate">document.pdf</span>
+                                    <button type="button" id="remove-file-btn" class="text-red-600 hover:text-red-800 font-bold ml-2">Fshi</button>
+                                </div>
+                            </div>
+
+                            <!-- Action button -->
+                            <div class="pt-2">
+                                <button type="submit" id="submit-quote-btn" class="w-full bg-accent hover:bg-accent-hover text-white py-3.5 rounded-lg text-xs font-bold tracking-widest uppercase transition-all shadow-xs flex items-center justify-center gap-2">
+                                    Merr një Ofertë Fikse
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Facts & Compliance Section (Recreated as sleek side-by-side block container) -->
+        <section class="py-16 px-6 lg:px-12 bg-white border-b border-stone-100">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Fact 1 -->
+                    <div class="editorial-card-accent p-6 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-accent text-xs font-bold tracking-widest uppercase">01 / Tarifa Fikse</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Çmime Transparente</h4>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Duke filluar nga 35 € për faqe. Ju do të pranoni një ofertë të plotë me çmim fiks pa asnjë kosto të fshehur apo surpriza të mëvonshme.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Fact 2 -->
+                    <div class="editorial-card-accent p-6 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-accent text-xs font-bold tracking-widest uppercase">02 / Dorëzim i Shpejtë</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Përpunim në 48 Orë</h4>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthimet kryhen standard brenda 48 orëve. PDF e nënshkruar dërgohet në email, dhe kopja fizike me postë ekspres.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Fact 3 -->
+                    <div class="editorial-card-accent p-6 flex flex-col justify-between">
+                        <div class="space-y-2">
+                            <span class="text-accent text-xs font-bold tracking-widest uppercase">03 / Siguri Ligjore</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Pranim i Garantuar</h4>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthimet kryhen vetëm nga përkthyes të betuar zyrtarë, duke garantuar pranimin e plotë nga autoritetet dhe ambasadat.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Interactive Steps Section ("Si funksionon" - Redesigned as vertical editorial tree timeline) -->
+        <section id="si-funksionon" class="py-16 sm:py-24 px-6 lg:px-12 bg-[#fcfbfa] border-b border-stone-100">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 space-y-2">
+                    <h2 class="text-xs font-bold tracking-widest text-accent uppercase">Si funksionon shërbimi ynë</h2>
+                    <h3 class="text-3xl font-serif-brand font-medium text-primary">Procesi i Përkthimit në 3 Hapa</h3>
+                </div>
+
+                <!-- Vertical timeline tree structure -->
+                <div class="space-y-12 relative before:absolute before:top-4 before:bottom-4 before:left-6 before:w-[1px] before:bg-stone-200">
+                    
+                    <!-- Step 1 -->
+                    <div class="relative pl-14 group">
+                        <div class="absolute top-0.5 left-3.5 w-6 h-6 rounded-full bg-white border-2 border-accent flex items-center justify-center text-[10px] font-bold text-accent transition-all group-hover:bg-accent group-hover:text-white">
+                            1
+                        </div>
+                        <h4 class="text-base font-serif-brand font-bold text-primary mb-1">Ngarkoni Dokumentet Tuaja</h4>
+                        <p class="text-xs text-stoneLight leading-relaxed max-w-2xl">
+                            Përdorni kalkulatorin tonë online për të ngarkuar skanimet apo fotot e dokumentit tuaj në mënyrë të enkriptuar SSL.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="relative pl-14 group">
+                        <div class="absolute top-0.5 left-3.5 w-6 h-6 rounded-full bg-white border-2 border-accent flex items-center justify-center text-[10px] font-bold text-accent transition-all group-hover:bg-accent group-hover:text-white">
+                            2
+                        </div>
+                        <h4 class="text-base font-serif-brand font-bold text-primary mb-1">Pranoni Ofertën e Çmimit</h4>
+                        <p class="text-xs text-stoneLight leading-relaxed max-w-2xl">
+                            Shqyrtojmë dokumentin tuaj dhe ju dërgojmë një ofertë me çmim fiks dhe kohën e saktë të përfundimit të përkthimit.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="relative pl-14 group">
+                        <div class="absolute top-0.5 left-3.5 w-6 h-6 rounded-full bg-white border-2 border-accent flex items-center justify-center text-[10px] font-bold text-accent transition-all group-hover:bg-accent group-hover:text-white">
+                            3
+                        </div>
+                        <h4 class="text-base font-serif-brand font-bold text-primary mb-1">Merrni Përkthimin e Certifikuar</h4>
+                        <p class="text-xs text-stoneLight leading-relaxed max-w-2xl">
+                            Ju vjen PDF e certifikuar në email, dhe përkthimi fizik i printuar dhe i nënshkruar vjen direkt në adresën tuaj me postë.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Tabbed Document Explorer Catalog (Dokumentet & Çmimet - completely original filtering catalog list explorer) -->
+        <section id="dokumentet" class="py-16 sm:py-24 px-6 lg:px-12 bg-white border-b border-stone-100">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 space-y-2">
+                    <h2 class="text-xs font-bold tracking-widest text-accent uppercase">Dokumentet & Çmimet</h2>
+                    <h3 class="text-3xl font-serif-brand font-medium text-primary">Katalogu i Shërbimeve të Përkthimit</h3>
+                </div>
+
+                <!-- Tabs Filter Row -->
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-10 text-xs font-bold tracking-wider uppercase">
+                    <button type="button" onclick="filterCatalog('all', this)" class="px-5 py-2.5 rounded-lg border border-primary bg-primary text-white transition-all focus:outline-none">Të gjitha</button>
+                    <button type="button" onclick="filterCatalog('personal', this)" class="px-5 py-2.5 rounded-lg border border-stone-200 text-stoneText hover:border-primary transition-all focus:outline-none">Certifikata Personale</button>
+                    <button type="button" onclick="filterCatalog('academic-business', this)" class="px-5 py-2.5 rounded-lg border border-stone-200 text-stoneText hover:border-primary transition-all focus:outline-none">Dëshmi & Kontrata</button>
+                </div>
+
+                <!-- Tabbed Items Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="catalog-grid">
+                    
+                    <!-- Card 1 (Birth Certificate) -->
+                    <div data-category="personal" class="editorial-card flex flex-col justify-between overflow-hidden shadow-xs hover:border-accent">
+                        <div class="p-6 space-y-4">
+                            <span class="text-[9px] font-bold text-accent uppercase tracking-widest">Personal / Certifikatë</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Certifikatë Lindjeje</h4>
+                            <div class="flex items-center gap-1 text-accent-yellow">
+                                <span class="text-xs">★★★★★</span>
+                            </div>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthim zyrtar i certifikatave të lindjes ose statusit familjar për përdorim ndërkombëtar.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-[#fbfbfa] border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-sm font-bold text-primary">nga 35 €</span>
+                            <a href="#formular" class="text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-wider">Zgjidh</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 (Diploma) -->
+                    <div data-category="academic-business" class="editorial-card flex flex-col justify-between overflow-hidden shadow-xs hover:border-accent">
+                        <div class="p-6 space-y-4">
+                            <span class="text-[9px] font-bold text-accent uppercase tracking-widest">Akademik / Dëshmi</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Diplomë Universitare</h4>
+                            <div class="flex items-center gap-1 text-accent-yellow">
+                                <span class="text-xs">★★★★★</span>
+                            </div>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthime zyrtare dhe të certifikuara të diplomave universitare dhe dëshmive të shkollës.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-[#fbfbfa] border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-sm font-bold text-primary">nga 39 €</span>
+                            <a href="#formular" class="text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-wider">Zgjidh</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 (Marriage) -->
+                    <div data-category="personal" class="editorial-card flex flex-col justify-between overflow-hidden shadow-xs hover:border-accent">
+                        <div class="p-6 space-y-4">
+                            <span class="text-[9px] font-bold text-accent uppercase tracking-widest">Personal / Certifikatë</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Certifikatë Martese</h4>
+                            <div class="flex items-center gap-1 text-accent-yellow">
+                                <span class="text-xs">★★★★★</span>
+                            </div>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthim zyrtar i betuar i certifikatave të martesës dhe bashkimit familjar.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-[#fbfbfa] border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-sm font-bold text-primary">nga 35 €</span>
+                            <a href="#formular" class="text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-wider">Zgjidh</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 (License) -->
+                    <div data-category="personal" class="editorial-card flex flex-col justify-between overflow-hidden shadow-xs hover:border-accent">
+                        <div class="p-6 space-y-4">
+                            <span class="text-[9px] font-bold text-accent uppercase tracking-widest">Personal / ID</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Patentë Shoferi</h4>
+                            <div class="flex items-center gap-1 text-accent-yellow">
+                                <span class="text-xs">★★★★★</span>
+                            </div>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthime zyrtare dhe të certifikuara të lejeve të drejtimit ose patentave.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-[#fbfbfa] border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-sm font-bold text-primary">nga 30 €</span>
+                            <a href="#formular" class="text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-wider">Zgjidh</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 (Criminal Records) -->
+                    <div data-category="personal" class="editorial-card flex flex-col justify-between overflow-hidden shadow-xs hover:border-accent">
+                        <div class="p-6 space-y-4">
+                            <span class="text-[9px] font-bold text-accent uppercase tracking-widest">Personal / Dëshmi</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Dëshmi Penaliteti</h4>
+                            <div class="flex items-center gap-1 text-accent-yellow">
+                                <span class="text-xs">★★★★★</span>
+                            </div>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthim zyrtar i vërtetimeve të gjendjes gjyqësore ose dëshmisë së penalitetit.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-[#fbfbfa] border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-sm font-bold text-primary">nga 35 €</span>
+                            <a href="#formular" class="text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-wider">Zgjidh</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 (Contract) -->
+                    <div data-category="academic-business" class="editorial-card flex flex-col justify-between overflow-hidden shadow-xs hover:border-accent">
+                        <div class="p-6 space-y-4">
+                            <span class="text-[9px] font-bold text-accent uppercase tracking-widest">Biznes / Kontratë</span>
+                            <h4 class="text-base font-serif-brand font-bold text-primary">Kontrata Pune & Biznesi</h4>
+                            <div class="flex items-center gap-1 text-accent-yellow">
+                                <span class="text-xs">★★★★★</span>
+                            </div>
+                            <p class="text-xs text-stoneLight leading-relaxed">
+                                Përkthim zyrtar i kontratave të punës, marrëveshjeve tregtare dhe statuteve.
+                            </p>
+                        </div>
+                        <div class="p-6 bg-[#fbfbfa] border-t border-stone-100 flex items-center justify-between">
+                            <span class="text-sm font-bold text-primary">nga 45 €</span>
+                            <a href="#formular" class="text-xs font-bold text-accent hover:text-accent-hover uppercase tracking-wider">Zgjidh</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Languages Grid & Advantages (Minimal layout grid) -->
+        <section class="py-16 sm:py-24 px-6 lg:px-12 bg-[#fcfbfa] border-b border-stone-100">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Languages -->
+                    <div class="lg:col-span-6 space-y-6">
+                        <h4 class="text-xs font-bold tracking-widest text-accent uppercase">Mbulimi Gjuhësor</h4>
+                        <h3 class="text-2xl font-serif-brand font-bold text-primary">Përkthime në mbi 40 Gjuhë</h3>
+                        <p class="text-xs text-stoneLight leading-relaxed font-light">
+                            Ne mbulojmë të gjitha gjuhët kryesore evropiane. Gjuhët më të kërkuara përfshijnë gjuhën gjermane, angleze, italiane, franceze, spanjolle, greke dhe gjuhën shqipe. Ekipi ynë garanton përkthim të saktë dhe profesional.
+                        </p>
+                        <!-- List grid -->
+                        <div class="grid grid-cols-2 gap-4 text-xs font-bold text-primary">
+                            <div class="flex items-center gap-2"><span>🇩🇪</span> Gjermanisht</div>
+                            <div class="flex items-center gap-2"><span>🇬🇧</span> Anglisht</div>
+                            <div class="flex items-center gap-2"><span>🇮🇹</span> Italisht</div>
+                            <div class="flex items-center gap-2"><span>🇫🇷</span> Frëngjisht</div>
+                            <div class="flex items-center gap-2"><span>🇪🇸</span> Spanjisht</div>
+                            <div class="flex items-center gap-2"><span>🇦🇱</span> Shqip</div>
+                        </div>
+                    </div>
+
+                    <!-- Advantages details -->
+                    <div class="lg:col-span-6 space-y-6 bg-white p-6 rounded-xl border border-stone-200/60 shadow-xs">
+                        <h4 class="text-xs font-bold tracking-widest text-accent uppercase text-center lg:text-left">Pse Përkthime Expert?</h4>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3">
+                                <span class="text-accent font-extrabold text-xs">✓</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-primary">Ekip Profesional i Certifikuar</h5>
+                                    <p class="text-[11px] text-stoneLight leading-normal">Të gjithë përkthyesit janë të regjistruar dhe zotërojnë licencat ligjore për certifikim zyrtar.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-accent font-extrabold text-xs">✓</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-primary">Mbrojtje Konfidenciale e Dhënash</h5>
+                                    <p class="text-[11px] text-stoneLight leading-normal">Çdo dokument ngarkohet në mënyrë të sigurt dhe fshihet pas dorëzimit nëse ju e kërkoni.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="text-accent font-extrabold text-xs">✓</span>
+                                <div>
+                                    <h5 class="text-xs font-bold text-primary">Standardi ISO 17100</h5>
+                                    <p class="text-[11px] text-stoneLight leading-normal">Rregullat dhe korrigjimet tona i nënshtrohen standardeve të rrepta evropiane.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Testimonials Section -->
+        <section class="py-16 px-6 lg:px-12 bg-white border-b border-stone-100">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 space-y-2">
+                    <h3 class="text-2xl font-serif-brand font-medium text-primary">Vlerësimet e Klientëve Tanë</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="p-6 rounded-xl bg-[#fcfbfa] border border-stone-200/50 space-y-3">
+                        <div class="flex text-accent">★★★★★</div>
+                        <p class="text-xs text-stoneText italic leading-relaxed">
+                            "Më duhej përkthimi i diplomës për në Gjermani brenda pak ditësh. Çdo gjë shkoi në mënyrë të përsosur dhe me çmim shumë të mirë. Shërbim i shpejtë!"
+                        </p>
+                        <div class="text-[10px] font-bold text-stoneLight uppercase tracking-wider">— Besnik H., Student</div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="p-6 rounded-xl bg-[#fcfbfa] border border-stone-200/50 space-y-3">
+                        <div class="flex text-accent">★★★★★</div>
+                        <p class="text-xs text-stoneText italic leading-relaxed">
+                            "Përkthimi i certifikatës së martesës u krye brenda 48 orëve dhe u pranua pa asnjë problem në zyrën e gjendjes civile gjermane. Shumë profesionistë!"
+                        </p>
+                        <div class="text-[10px] font-bold text-stoneLight uppercase tracking-wider">— Anila K.</div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="p-6 rounded-xl bg-[#fcfbfa] border border-stone-200/50 space-y-3">
+                        <div class="flex text-accent">★★★★★</div>
+                        <p class="text-xs text-stoneText italic leading-relaxed">
+                            "Komunikimi ishte shumë i lehtë përmes emailit dhe çmimi fiks ishte transparent që në fillim. E rekomandoj për çdo përkthim zyrtar."
+                        </p>
+                        <div class="text-[10px] font-bold text-stoneLight uppercase tracking-wider">— Fatmir S., Sipërmarrës</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. FAQ Section (Minimalist accordion triggers) -->
+        <section id="faq" class="py-16 sm:py-24 px-6 lg:px-12 bg-[#fcfbfa] border-b border-stone-100">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 space-y-2">
+                    <h2 class="text-xs font-bold tracking-widest text-accent uppercase">FAQ / Pyetjet e Shpeshta</h2>
+                    <h3 class="text-3xl font-serif-brand font-medium text-primary">Gjithçka që Duhet të Dini mbi Përkthimet</h3>
+                </div>
+
+                <div class="space-y-4">
+                    
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item bg-white rounded-lg border border-stone-200 transition-all">
+                        <button type="button" class="accordion-trigger w-full text-left px-6 py-4 flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="font-bold text-primary text-xs sm:text-sm">Çfarë është një përkthim i certifikuar dhe kush e kryen atë?</span>
+                            <span class="accordion-arrow transform transition-transform duration-200 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <p class="text-[11px] text-stoneLight leading-relaxed">
+                                Një përkthim i certifikuar është përkthimi zyrtar i një dokumenti që mban vulën, nënshkrimin dhe deklaratën e vërtetësisë të një përkthyesi të betuar zyrtar (i emëruar nga Gjykata ose Ministria e Drejtësisë). Kjo garanton që përkthimi përputhet saktësisht me origjinalin dhe pranohet ligjërisht nga institucionet shtetërore.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item bg-white rounded-lg border border-stone-200 transition-all">
+                        <button type="button" class="accordion-trigger w-full text-left px-6 py-4 flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="font-bold text-primary text-xs sm:text-sm">Sa kushton një përkthim i certifikuar online?</span>
+                            <span class="accordion-arrow transform transition-transform duration-200 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <p class="text-[11px] text-stoneLight leading-relaxed">
+                                Çmimi fillon nga 35 € për faqe dhe varet nga gjuha e zgjedhur, kompleksiteti i tekstit dhe koha e dorëzimit. Për të marrë një ofertë të saktë dhe të menjëhershme pa asnjë detyrim, ngarkoni një foto ose skanim të dokumentit tuaj në formularin tonë lart.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item bg-white rounded-lg border border-stone-200 transition-all">
+                        <button type="button" class="accordion-trigger w-full text-left px-6 py-4 flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="font-bold text-primary text-xs sm:text-sm">A pranohen përkthimet tuaja nga institucionet zyrtare dhe ambasadat?</span>
+                            <span class="accordion-arrow transform transition-transform duration-200 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <p class="text-[11px] text-stoneLight leading-relaxed">
+                                Po, absolutisht. Përkthimet tona kryhen vetëm nga përkthyes të betuar zyrtarisht të njohur nga gjykatat. Kjo garanton pranimin e plotë të dokumenteve tuaja në gjithë zyrat shtetërore, zyrat e gjendjes civile, universitetet, gjykatat dhe ambasadat në Shqipëri, Kosovë, Gjermani dhe jashtë saj.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="accordion-item bg-white rounded-lg border border-stone-200 transition-all">
+                        <button type="button" class="accordion-trigger w-full text-left px-6 py-4 flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="font-bold text-primary text-xs sm:text-sm">Si më dërgohet përkthimi i përfunduar?</span>
+                            <span class="accordion-arrow transform transition-transform duration-200 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <p class="text-[11px] text-stoneLight leading-relaxed">
+                                Pasi të përfundojë përkthimi, ne ju dërgojmë fillimisht një kopje digjitale të certifikuar në formatin PDF me email. Më pas, dokumenti i printuar zyrtar me vulë dhe nënshkrim fizik ju dërgohet me postë direkt në adresën tuaj të shtëpisë ose të zyrës.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="accordion-item bg-white rounded-lg border border-stone-200 transition-all">
+                        <button type="button" class="accordion-trigger w-full text-left px-6 py-4 flex items-center justify-between gap-4 focus:outline-none">
+                            <span class="font-bold text-primary text-xs sm:text-sm">Sa kohë zgjat përpunimi?</span>
+                            <span class="accordion-arrow transform transition-transform duration-200 text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="accordion-content px-6">
+                            <p class="text-[11px] text-stoneLight leading-relaxed">
+                                Koha standarde e dorëzimit të PDF-së është 48 orë nga konfirmimi i porosisë dhe pagesës. Në rast të kërkesave urgjente, ne ofrojmë gjithashtu shërbimin ekspres brenda 24 orëve.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Portal Footer Section (Warm Stone layout matching dashboard flow) -->
+        <footer class="bg-[#f5f5f4] text-stoneText pt-16 pb-8 border-t border-stone-200/80">
+            <div class="max-w-6xl mx-auto px-6">
+                <!-- CTA row -->
+                <div class="border-b border-stone-200 pb-12 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div>
+                        <h4 class="text-lg font-serif-brand font-bold text-primary">Gati për të përkthyer dokumentin tuaj?</h4>
+                        <p class="text-xs text-stoneLight font-light mt-1">Ngarkoni skedarin dhe zbuloni çmimin e saktë brenda pak minutave.</p>
+                    </div>
+                    <a href="#formular" class="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all">
+                        Filloni Tani
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                    <!-- Column 1: Info and description -->
+                    <div class="space-y-4">
+                        <span class="font-serif-brand text-lg font-bold text-primary">Përkthime<span class="text-accent">Expert</span></span>
+                        <p class="text-xs text-stoneLight leading-relaxed">
+                            Shërbimi juaj i besueshëm për përkthime të certifikuara online. Ekipi ynë i përkthyesve të betuar garanton pranimin e plotë të dokumenteve tuaja.
+                        </p>
+                        <p class="text-xs text-stoneLight">
+                            © 2026 Përkthime Expert. Të gjitha të drejtat e rezervuara.
+                        </p>
+                    </div>
+
+                    <!-- Column 2: Quick Links -->
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider mb-4 border-b border-stone-200 pb-2 text-primary">Shërbimet tona</h4>
+                        <ul class="space-y-2.5 text-xs text-stoneLight">
+                            <li><a href="#dokumentet" class="hover:text-accent transition-colors">Përkthim Certifikatash</a></li>
+                            <li><a href="#dokumentet" class="hover:text-accent transition-colors">Përkthim Diplomash</a></li>
+                            <li><a href="#dokumentet" class="hover:text-accent transition-colors">Përkthim Patentash</a></li>
+                            <li><a href="#dokumentet" class="hover:text-accent transition-colors">Kontrata Pune & Biznesi</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Contact details -->
+                    <div>
+                        <h4 class="text-xs font-bold uppercase tracking-wider mb-4 border-b border-stone-200 pb-2 text-primary">Na Kontaktoni</h4>
+                        <ul class="space-y-3 text-xs text-stoneLight">
+                            <li class="flex items-center gap-2">
+                                Tiranë, Shqipëri
+                            </li>
+                            <li class="flex items-center gap-2">
+                                +355 (0) 69 123 4567
+                            </li>
+                            <li class="flex items-center gap-2">
+                                info@perkthime-expert.al
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Payment Methods -->
+                    <div class="space-y-4">
+                        <h4 class="text-xs font-bold uppercase tracking-wider border-b border-stone-200 pb-2 text-primary">Pagesa të Sigurta</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-white px-2.5 py-1 rounded border border-stone-200 text-[10px] font-bold text-stoneText">VISA</span>
+                            <span class="bg-white px-2.5 py-1 rounded border border-stone-200 text-[10px] font-bold text-stoneText">MASTERCARD</span>
+                            <span class="bg-white px-2.5 py-1 rounded border border-stone-200 text-[10px] font-bold text-stoneText">PAYPAL</span>
+                        </div>
+                        <div class="border-t border-stone-200 pt-4 flex items-center gap-2">
+                            <span class="text-[10px] text-stoneLight">Enkriptim i siguruar nga SSL Certificate</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lower footer links -->
+                <div class="border-t border-stone-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stoneLight font-light">
+                    <div class="flex flex-wrap gap-x-6 gap-y-2 justify-center sm:justify-start">
+                        <a href="#" class="hover:text-primary">Impressum (Mbi ne)</a>
+                        <a href="#" class="hover:text-primary">Mbrojtja e të Dhënave</a>
+                        <a href="#" class="hover:text-primary">Kushtet e Përdorimit</a>
+                        <a href="#" class="hover:text-primary">Politika e Cookies</a>
+                    </div>
+                    <div>
+                        Përkthime Expert 🇦🇱
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- Link to JavaScript logic file -->
+    <script src="index.js"></script>
+</body>
+</html>
